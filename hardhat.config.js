@@ -34,7 +34,9 @@ task("accounts", "Prints the list of accounts", async () => {
   },
   networks: {
     localhost: {
-      url: "http://127.0.0.1:8545"
+      url: "http://127.0.0.1:8545",
+      gasPrice: 20000000000,
+      accounts: [process.env.PRIVATEKEY]
     },
     hardhat: {
     },

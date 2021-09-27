@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 
-contract FoxNFT is AccessControl, ERC721Enumerable, ERC721URIStorage {
+contract ShoeFyNFT is AccessControl, ERC721Enumerable, ERC721URIStorage {
     using Counters for Counters.Counter;
     string baseURI;
 
@@ -17,10 +17,10 @@ contract FoxNFT is AccessControl, ERC721Enumerable, ERC721URIStorage {
     Counters.Counter private _tokenIdTracker;
 
     constructor(string memory _name, string memory _symbol, string memory baseURI_) ERC721(_name, _symbol) {
-        // _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
+        _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
         _setupRole(MINTER_ROLE, _msgSender());
         _setupRole(TOKEN_ADMIN_ROLE, _msgSender());
-        baseURI = baseURI_;
+        baseURI = baseURI_;  // https://gateway.pinata.cloud/ipfs/, ShoeFy NFT, ShoeFyNFT
     }
     
 
